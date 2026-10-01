@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바삭치킨 | 메인 컨셉 시안 3종</title>
+<meta name="description" content="바삭치킨 브랜드 사이트 메인 페이지 컨셉 시안 A, B, C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Barlow+Condensed:ital,wght@1,800;1,900&family=Fredoka:wght@600&family=Jua&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root { --bg: #F3F1EC; --ink: #17171A; --mute: #6B6B72; --line: #DAD7CF; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: var(--bg); color: var(--ink); font-family: Pretendard, system-ui, sans-serif; min-height: 100svh; display: flex; flex-direction: column; }
+  a { color: inherit; text-decoration: none; }
+
+  .top { padding: clamp(28px, 5vw, 64px) clamp(20px, 5vw, 72px) 0; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+  .top h1 { font-size: clamp(30px, 4.4vw, 60px); font-weight: 800; letter-spacing: -.03em; line-height: 1.08; }
+  .top h1 span { color: var(--mute); font-weight: 500; }
+  .top p { color: var(--mute); font-size: 15px; line-height: 1.6; max-width: 34ch; }
+
+  .grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 24px); padding: clamp(24px, 4vw, 56px) clamp(20px, 5vw, 72px) clamp(28px, 5vw, 64px); }
+  .card { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: clamp(380px, 56vh, 620px); padding: clamp(22px, 2.4vw, 36px); overflow: hidden; isolation: isolate; transition: transform .6s cubic-bezier(.2,.8,.2,1), box-shadow .6s cubic-bezier(.2,.8,.2,1); }
+  .card:hover, .card:focus-visible { transform: translateY(-10px); box-shadow: 0 34px 60px -24px rgba(0,0,0,.35); outline: none; }
+  .card:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+  .tag { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+  .tag b { font-weight: 800; }
+  .mark { line-height: .88; }
+  .meta { display: grid; gap: 14px; }
+  .meta h2 { font-size: clamp(20px, 1.8vw, 26px); font-weight: 800; letter-spacing: -.02em; }
+  .meta p { font-size: 14.5px; line-height: 1.65; opacity: .86; }
+  .meta ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+  .meta li { font-size: 12px; font-weight: 600; padding: 6px 10px; border: 1px solid currentColor; border-radius: 99px; opacity: .8; }
+  .go { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15px; margin-top: 6px; }
+  .go i { display: inline-block; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid currentColor; position: relative; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .go i::before { content: ""; position: absolute; inset: 0; margin: auto; width: 9px; height: 9px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: translateX(-2px) rotate(45deg); }
+  .card:hover .go i { transform: translateX(8px); }
+
+  /* A: bold */
+  .a { background: #fff; color: #0A0A0B; border-radius: 20px; box-shadow: inset 0 0 0 1px #E7E7E7; }
+  .a::before { content: ""; position: absolute; z-index: -1; left: 0; right: 0; bottom: 0; height: 100%; background: #FF2E12; clip-path: inset(100% 0 0 0); transition: clip-path .8s cubic-bezier(.215,.61,.355,1); }
+  .a:hover::before, .a:focus-visible::before { clip-path: inset(0 0 0 0); }
+  .a:hover, .a:focus-visible { color: #fff; }
+  .a:hover .mark, .a:focus-visible .mark { color: #fff; }
+  .a .mark { font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 900; font-size: clamp(80px, 9vw, 160px); letter-spacing: -.03em; color: #FF2E12; white-space: nowrap; transition: color .5s; }
+  .a .mark small { display: block; font-family: Pretendard, sans-serif; font-style: normal; font-weight: 800; font-size: .19em; letter-spacing: -.02em; color: inherit; margin-top: .5em; }
+  .a .mark small, .a .meta, .a .tag { transition: color .5s; }
+  .a .mark small { color: #0A0A0B; }
+  .a:hover .mark small, .a:focus-visible .mark small { color: #fff; }
+
+  /* B: pop */
+  .b { background: #1433FF; color: #fff; border-radius: 30px; }
+  .b::before { content: ""; position: absolute; z-index: -1; right: -26%; top: -22%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: #FFE01A; transition: transform .9s cubic-bezier(.34,1.56,.64,1); }
+  .b:hover::before { transform: scale(1.12) translate(-4%, 4%); }
+  .b .tag span { color: #0B1140; }
+  .b .mark { font-family: "Bagel Fat One", sans-serif; font-size: clamp(56px, 6vw, 104px); color: #FFE01A; letter-spacing: -.02em; white-space: nowrap; }
+  .b .mark small { display: block; font-family: Poppins, sans-serif; font-weight: 900; font-size: .26em; color: #fff; letter-spacing: 0; margin-top: .5em; }
+  .b .meta { color: #fff; }
+  .b .meta p { text-shadow: 0 0 0 transparent; }
+
+  /* C: warm */
+  .c { background: #FBF6E8; color: #5A3E2B; border-radius: 28px; box-shadow: inset 0 0 0 1px #EADFC7; }
+  .c::before { content: ""; position: absolute; z-index: -1; left: -10%; right: -10%; bottom: -1px; height: 46%; background: #F6B21B; border-radius: 50% 50% 0 0 / 38% 38% 0 0; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+  .c:hover::before { transform: translateY(-5%) scaleX(1.04); }
+  .c .mark { font-family: Jua, sans-serif; font-size: clamp(56px, 6vw, 104px); letter-spacing: -.02em; white-space: nowrap; }
+  .c .mark small { display: block; font-family: Fredoka, sans-serif; font-weight: 600; font-size: .22em; color: #F0762B; letter-spacing: .08em; margin-top: .5em; }
+  .c .meta { color: #3D2A1E; }
+
+  .foot { padding: 0 clamp(20px, 5vw, 72px) 28px; color: var(--mute); font-size: 13px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 18px; margin: 0 clamp(20px, 5vw, 72px) 0; padding-left: 0; padding-right: 0; }
+
+  @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } .card { min-height: 420px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <header class="top">
+    <h1>바삭치킨 메인 시안 <span>3종</span></h1>
+    <p>같은 브랜드와 메뉴를 세 가지 방향으로 풀었습니다. 카드를 눌러 각 시안을 확인하세요.</p>
+  </header>
+
+  <main class="grid">
+    <a class="card a" href="a-bold/">
+      <div class="tag"><b>A</b><span>BOLD</span></div>
+      <div class="mark">BASAK<small>소리부터 다르다</small></div>
+      <div class="meta">
+        <h2>여백과 비주얼로 압도하는 시안</h2>
+        <p>흰 바탕에 검정 타이포, 박스로 올린 강한 영상. 스크롤로 닦이듯 바뀌는 메뉴와 닭다리가 회전하는 필름 챕터가 핵심입니다.</p>
+        <ul><li>와이프 메뉴 스테이지</li><li>스크롤 프레임 120컷</li><li>영상 KV</li></ul>
+        <span class="go">시안 보기 <i></i></span>
+      </div>
+    </a>
+
+    <a class="card b" href="b-pop/">
+      <div class="tag"><b>B</b><span>POP</span></div>
+      <div class="mark">바삭치킨<small>BASAK Chicken</small></div>
+      <div class="meta">
+        <h2>색과 누끼로 튀는 시안</h2>
+        <p>코발트 블루와 옐로의 평면 색면, 통통 튀는 모션. 3D 닭다리와 분해되는 재료 연출이 핵심입니다.</p>
+        <ul><li>3D 모델</li><li>분해 레이어</li><li>확장 핀 연출</li></ul>
+        <span class="go">시안 보기 <i></i></span>
+      </div>
+    </a>
+
+    <a class="card c" href="c-warm/">
+      <div class="tag"><b>C</b><span>WARM</span></div>
+      <div class="mark">바삭치킨<small>BASAK CHICKEN</small></div>
+      <div class="meta">
+        <h2>따뜻하고 친근한 시안</h2>
+        <p>크림과 브라운, 둥근 서체와 캐릭터. 컬러 블록 메뉴 캐러셀과 마스코트가 핵심입니다.</p>
+        <ul><li>컬러 블록 메뉴</li><li>마스코트</li><li>히어로 슬라이더</li></ul>
+        <span class="go">시안 보기 <i></i></span>
+      </div>
+    </a>
+  </main>
+
+  <footer class="foot">
+    <span>BASAK CHICKEN · Main Concept A / B / C</span>
+    <span>2026.10</span>
+  </footer>
+</body>
+</html>

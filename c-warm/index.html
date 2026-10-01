@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바삭치킨 BASAK CHICKEN | 오늘도, 바삭하게</title>
+<meta name="description" content="두 번 입힌 튀김옷, 24시간 염지, 매일 새 기름. 동네에서 믿고 시키는 치킨, 바삭치킨.">
+<meta name="theme-color" content="#FBF6E8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F6B21B'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='%235A3E2B'%3EB%3C/text%3E%3C/svg%3E">
+<script>
+(function (d) {
+  var r = d.documentElement;
+  r.classList.add('js');
+  try {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { r.classList.add('no-motion', 'reduced'); }
+  } catch (e) { r.classList.add('no-motion'); }
+  setTimeout(function () { if (!r.classList.contains('is-ready')) { r.classList.add('no-motion'); } }, 4000);
+})(document);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Jua&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="../vendor/swiper-bundle.min.css">
+<link rel="stylesheet" href="../vendor/lenis.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14.5M13 5.5l6.5 6.5-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19.5 12H5M11 5.5L4.5 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 9.1v5.8l5-2.9z" fill="currentColor"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.7 3.5h2.6l1.5 4.2-2.1 1.4a12 12 0 0 0 6.2 6.2l1.4-2.1 4.2 1.5v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.7 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 23s7.5-7 7.5-13A7.5 7.5 0 0 0 4.5 10c0 6 7.5 13 7.5 13z" fill="currentColor"/><circle cx="12" cy="10" r="2.9" fill="#FFF8EE"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5.2l3.3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 1.5c.9 5.6 4.9 9.6 10.5 10.5-5.6.9-9.6 4.9-10.5 10.5C11.1 16.9 7.1 12.9 1.5 12 7.1 11.1 11.1 7.1 12 1.5z" fill="currentColor"/></symbol>
+  <symbol id="i-drum" viewBox="0 0 48 48"><ellipse cx="29" cy="19" rx="15.5" ry="13" transform="rotate(-45 29 19)" fill="currentColor"/><path d="M20.5 27.5L11 37" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><circle cx="6.8" cy="37.4" r="3.7" fill="currentColor"/><circle cx="10.6" cy="41.2" r="3.7" fill="currentColor"/></symbol>
+  <symbol id="i-scooter" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="2.6"/><circle cx="18.2" cy="17" r="2.6"/><path d="M8.6 17h7M15.4 17L13.6 8.5h-2.8M13.6 8.5h2.6l2.4 6"/><path d="M3 12.5h6.6v4.5"/><path d="M4.2 9.5h4.6"/></g></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8.2h14l-1.1 12.3H6.1z"/><path d="M9 10.5V6.8a3 3 0 0 1 6 0v3.7"/></g></symbol>
+</svg>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<!-- Header -->
+<header class="site-header" id="top">
+  <div class="site-header__inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="전체 메뉴 열기">
+      <span class="menu-toggle__icon" aria-hidden="true">
+        <svg class="menu-toggle__burger" viewBox="0 0 32 24">
+          <g class="menu-toggle__drum">
+            <circle cx="3.4" cy="3.3" r="2.4"/><circle cx="3.4" cy="7.1" r="2.4"/>
+            <rect x="3.4" y="3.9" width="14" height="2.6" rx="1.3"/>
+            <ellipse cx="22.8" cy="5.2" rx="8.2" ry="4.9"/>
+          </g>
+          <rect class="menu-toggle__line menu-toggle__line--2" x="1" y="12.2" width="30" height="2.8" rx="1.4"/>
+          <rect class="menu-toggle__line menu-toggle__line--3" x="1" y="19.4" width="20" height="2.8" rx="1.4"/>
+        </svg>
+        <svg class="menu-toggle__close" viewBox="0 0 24 24"><use href="#i-close"/></svg>
+      </span>
+      <span class="menu-toggle__label" aria-hidden="true"><span>MENU</span><span>CLOSE</span></span>
+    </button>
+
+    <a class="wordmark" href="#hero" aria-label="바삭치킨 처음으로">
+      <span class="wordmark__ko">바삭치킨</span>
+      <span class="wordmark__en">BASAK CHICKEN</span>
+      <svg class="wordmark__crunch" viewBox="0 0 20 20" aria-hidden="true"><path d="M9 2.5v4M15.5 5l-2.8 2.8M17.5 11.5h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </a>
+
+    <div class="site-header__right">
+      <nav class="quick-links" aria-label="문의 바로가기">
+        <a href="#franchise">가맹문의</a>
+        <span class="quick-links__dot" aria-hidden="true">·</span>
+        <a href="#cs">고객문의</a>
+      </nav>
+      <div class="sns-links">
+        <a class="icon-btn" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="바삭치킨 인스타그램 (새 창)"><svg aria-hidden="true"><use href="#i-insta"/></svg></a>
+        <a class="icon-btn" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="바삭치킨 유튜브 (새 창)"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Full menu overlay -->
+<div class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="전체 메뉴" data-lenis-prevent>
+  <div class="site-menu__shapes" aria-hidden="true">
+    <span class="fshape fshape--a"></span>
+    <span class="fshape fshape--b"></span>
+    <span class="fshape fshape--c"></span>
+    <span class="fshape fshape--d"><svg><use href="#i-drum"/></svg></span>
+    <span class="fshape fshape--e"><svg><use href="#i-star"/></svg></span>
+    <span class="fshape fshape--f"></span>
+    <span class="fshape fshape--g"><svg><use href="#i-drum"/></svg></span>
+  </div>
+  <div class="site-menu__inner">
+    <nav class="site-menu__nav" aria-label="사이트 메뉴">
+      <ol>
+        <li style="--i:0"><a href="#hero"><span class="site-menu__num">01</span><span class="site-menu__txt">HOME</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:1"><a href="#menu"><span class="site-menu__num">02</span><span class="site-menu__txt">메뉴</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:2"><a href="#promo"><span class="site-menu__num">03</span><span class="site-menu__txt">프로모션</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:3"><a href="#news"><span class="site-menu__num">04</span><span class="site-menu__txt">공지사항</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:4"><a href="#store"><span class="site-menu__num">05</span><span class="site-menu__txt">매장찾기</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:5"><a href="#promise"><span class="site-menu__num">06</span><span class="site-menu__txt">브랜드 소개</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:6"><a href="#franchise"><span class="site-menu__num">07</span><span class="site-menu__txt">창업문의</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+        <li style="--i:7"><a href="#cs"><span class="site-menu__num">08</span><span class="site-menu__txt">고객문의</span><svg class="site-menu__drum" aria-hidden="true"><use href="#i-drum"/></svg></a></li>
+      </ol>
+    </nav>
+    <aside class="site-menu__aside" style="--i:8" aria-label="문의 안내">
+      <p class="hand-label">Say hello!</p>
+      <div class="menu-contact">
+        <p class="menu-contact__label">창업 문의</p>
+        <a class="menu-contact__big" href="tel:15880000">1588-0000</a>
+        <a class="menu-contact__mail" href="mailto:franchise@basak.co.kr">franchise@basak.co.kr</a>
+      </div>
+      <div class="menu-contact">
+        <p class="menu-contact__label">고객센터</p>
+        <p class="menu-contact__text">평일 09:00 ~ 18:00<br>점심시간 12:00 ~ 13:00</p>
+      </div>
+      <div class="sns-links">
+        <a class="icon-btn" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="바삭치킨 인스타그램 (새 창)"><svg aria-hidden="true"><use href="#i-insta"/></svg></a>
+        <a class="icon-btn" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="바삭치킨 유튜브 (새 창)"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="바삭치킨 메인 비주얼">
+  <div class="swiper hero__swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide hero-slide hero-slide--1" data-tone="light">
+        <div class="hero-slide__media">
+          <video class="hero-slide__video" src="assets/video/hero1.mp4" poster="assets/img/hero1.webp" width="1920" height="1080" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
+        </div>
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__copy">
+          <p class="hero-slide__kicker"><span>매일 아침 새 기름으로 시작합니다</span><svg class="doodle" viewBox="0 0 220 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c16-9 28-9 40 0s25 9 38 0 25-9 38 0 25 9 38 0 25-9 38 0 16 6 22 2" pathLength="1"/></svg></p>
+          <h1 class="hero-slide__title"><span class="line"><span class="line__inner">오늘도,</span></span><span class="line"><span class="line__inner">바삭하게</span></span></h1>
+          <a class="btn btn--orange hero-slide__btn" href="#menu">메뉴 보러가기<span class="btn__icon" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+      <div class="swiper-slide hero-slide hero-slide--2" data-tone="light">
+        <div class="hero-slide__media">
+          <img class="hero-slide__img" src="assets/img/hero2.webp" alt="원목 보드 위 허니 버터 치킨에 꿀이 뚝뚝 떨어지는 모습" width="1920" height="1086" decoding="async">
+        </div>
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__copy">
+          <p class="hero-slide__kicker"><span>꿀이 뚝뚝, 버터가 솔솔</span><svg class="doodle" viewBox="0 0 220 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c16-9 28-9 40 0s25 9 38 0 25-9 38 0 25 9 38 0 25-9 38 0 16 6 22 2" pathLength="1"/></svg></p>
+          <h2 class="hero-slide__title"><span class="line"><span class="line__inner">달콤 고소한</span></span><span class="line"><span class="line__inner">허니 버터</span></span></h2>
+          <a class="btn btn--orange hero-slide__btn" href="#menu" data-menu-focus="honey">신메뉴 보기<span class="btn__icon" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+      <div class="swiper-slide hero-slide hero-slide--3" data-tone="dark">
+        <div class="hero-slide__media">
+          <img class="hero-slide__img" src="assets/img/hero3.webp" alt="여러 사람의 손이 후라이드와 양념 치킨으로 향하는 가족 식탁" width="1920" height="1086" decoding="async">
+        </div>
+        <div class="hero-slide__scrim" aria-hidden="true"></div>
+        <div class="container hero-slide__copy">
+          <p class="hero-slide__kicker"><span>함께라서 더 맛있는 시간</span><svg class="doodle" viewBox="0 0 220 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c16-9 28-9 40 0s25 9 38 0 25-9 38 0 25 9 38 0 25-9 38 0 16 6 22 2" pathLength="1"/></svg></p>
+          <h2 class="hero-slide__title"><span class="line"><span class="line__inner">온 가족</span></span><span class="line"><span class="line__inner">치킨 한 상</span></span></h2>
+          <a class="btn btn--orange hero-slide__btn" href="#store">가까운 매장 찾기<span class="btn__icon" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__controls">
+    <button class="round-btn round-btn--prev hero__prev" type="button" aria-label="이전 슬라이드"><svg aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+    <div class="hero__pagination"></div>
+    <button class="round-btn hero__next" type="button" aria-label="다음 슬라이드"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+  </div>
+  <p class="hero__count" aria-hidden="true"><span class="hero__count-cur">01</span><span class="hero__count-sep">/</span>03</p>
+
+  <div class="hero__wave" aria-hidden="true">
+    <svg class="hero__wave-back" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 70c120-30 250-44 380-22s250 52 390 40 260-62 400-58 200 34 270 40v50H0z"/></svg>
+    <svg class="hero__wave-front" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 84c150 26 300 30 450 6s290-60 440-52 280 52 400 50 120-16 150-24v56H0z"/></svg>
+  </div>
+</section>
+
+<!-- Menu -->
+<section class="menu" id="menu" aria-labelledby="menu-title">
+  <div class="container menu__head">
+    <div class="menu__heading">
+      <p class="hand-label" data-reveal>Basak's menu</p>
+      <h2 class="section-title" id="menu-title" data-split data-reveal>바삭치킨 메뉴</h2>
+      <p class="section-desc" data-reveal>튀김옷부터 소스까지, 매장에서 매일 직접 만들어요.</p>
+    </div>
+    <div class="filter" role="group" aria-label="메뉴 분류" data-reveal>
+      <span class="filter__indicator" aria-hidden="true"></span>
+      <button class="filter__btn is-active" type="button" data-filter="all" aria-pressed="true">ALL</button>
+      <button class="filter__btn" type="button" data-filter="chicken" aria-pressed="false">CHICKEN</button>
+      <button class="filter__btn" type="button" data-filter="side" aria-pressed="false">SIDE</button>
+      <button class="filter__btn" type="button" data-filter="drink" aria-pressed="false">DRINK</button>
+    </div>
+  </div>
+
+  <div class="swiper menu__swiper">
+    <ul class="swiper-wrapper menu__list">
+      <li class="swiper-slide menu-card menu-card--brown" data-cat="chicken" data-key="fried">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>01</span><span>CHICKEN</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/menu-fried.webp" alt="흰 접시에 담긴 바삭 후라이드" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">바삭 후라이드</h3>
+            <p class="menu-card__en">Original Crispy</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">두 번 입힌 튀김옷, 끝까지 바삭한 시그니처</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>19,000</b>원</p><a class="menu-card__go" href="#store" aria-label="바삭 후라이드 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--tan" data-cat="chicken" data-key="yang">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>02</span><span>CHICKEN</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/menu-yang.webp" alt="흰 접시에 담긴 레드 양념치킨" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">레드 양념</h3>
+            <p class="menu-card__en">Red Yangnyeom</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">24시간 숙성한 레드 소스를 주문 즉시 버무린 양념</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>20,000</b>원</p><a class="menu-card__go" href="#store" aria-label="레드 양념 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--mustard" data-cat="chicken" data-key="soy">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>03</span><span>CHICKEN</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/menu-soy.webp" alt="통마늘과 쪽파를 올린 간장 마늘 치킨" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">간장 마늘</h3>
+            <p class="menu-card__en">Soy Garlic</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">진간장과 통마늘로 졸인 단짠의 정석</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>20,000</b>원</p><a class="menu-card__go" href="#store" aria-label="간장 마늘 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--beige" data-cat="chicken" data-key="honey">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>04</span><span>CHICKEN</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/menu-honey.webp" alt="꿀단지와 함께 담긴 허니 버터 치킨" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">허니 버터</h3>
+            <p class="menu-card__en">Honey Butter</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">꿀과 버터 시즈닝을 듬뿍 입힌 달콤 고소한 맛</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>21,000</b>원</p><a class="menu-card__go" href="#store" aria-label="허니 버터 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--brown" data-cat="chicken" data-key="padak">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>05</span><span>CHICKEN</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/menu-padak.webp" alt="채 썬 대파를 수북이 올린 파닭" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">파닭</h3>
+            <p class="menu-card__en">Green Onion Chicken</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">채 썬 대파와 겨자 간장 소스</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>21,000</b>원</p><a class="menu-card__go" href="#store" aria-label="파닭 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--tan" data-cat="chicken" data-key="boneless">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>06</span><span>CHICKEN</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/menu-boneless.webp" alt="머스터드 소스와 함께 담긴 한 입 크기 순살 치킨" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">순살 바삭</h3>
+            <p class="menu-card__en">Boneless Crispy</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">한 입 크기 순살, 뼈 없이 편하게</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>21,000</b>원</p><a class="menu-card__go" href="#store" aria-label="순살 바삭 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--mustard" data-cat="side" data-key="cheese">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>07</span><span>SIDE</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/side-cheese.webp" alt="나무 볼에 담긴 치즈볼" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">치즈볼</h3>
+            <p class="menu-card__en">Cheese Ball</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">겉은 바삭, 속은 쭉 늘어나는 치즈</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>5,000</b>원</p><a class="menu-card__go" href="#store" aria-label="치즈볼 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--beige" data-cat="side" data-key="fries">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>08</span><span>SIDE</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/side-fries.webp" alt="크라프트 종이 콘에 담긴 감자튀김" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">감자튀김</h3>
+            <p class="menu-card__en">French Fries</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">시즈닝 솔솔, 치킨 옆 단짝</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>4,000</b>원</p><a class="menu-card__go" href="#store" aria-label="감자튀김 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide menu-card menu-card--brown" data-cat="drink" data-key="ade">
+        <div class="menu-card__inner">
+          <p class="menu-card__top"><span>09</span><span>DRINK</span></p>
+          <div class="menu-card__visual"><div class="menu-card__plate"><img class="menu-card__img" src="assets/img/side-ade.webp" alt="레몬 슬라이스와 얼음이 든 레몬에이드" width="900" height="900" loading="lazy" decoding="async"><span class="menu-card__shadow" aria-hidden="true"></span></div></div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__name">레몬에이드</h3>
+            <p class="menu-card__en">Lemonade</p>
+            <div class="menu-card__more"><div class="menu-card__more-inner">
+              <p class="menu-card__desc">상큼하게 입가심하는 레몬에이드</p>
+              <div class="menu-card__foot"><p class="menu-card__price"><b>4,000</b>원</p><a class="menu-card__go" href="#store" aria-label="레몬에이드 주문하러 가기"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+            </div></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container menu__controls">
+    <div class="menu__scrollbar" aria-hidden="true"></div>
+    <div class="menu__nav">
+      <button class="round-btn round-btn--prev menu__prev" type="button" aria-label="이전 메뉴"><svg aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+      <button class="round-btn menu__next" type="button" aria-label="다음 메뉴"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"><span class="divider__badge"><svg><use href="#i-drum"/></svg></span></div>
+</section>
+
+<!-- Promise -->
+<section class="promise" id="promise" aria-labelledby="promise-title">
+  <div class="promise__shapes" aria-hidden="true">
+    <span class="shape shape--1" data-depth="0.5"><i></i></span>
+    <span class="shape shape--2" data-depth="0.8"><i></i></span>
+    <span class="shape shape--3" data-depth="0.3"><i></i></span>
+    <span class="shape shape--4" data-depth="0.9"><i><svg><use href="#i-drum"/></svg></i></span>
+    <span class="shape shape--5" data-depth="0.6"><i><svg><use href="#i-star"/></svg></i></span>
+    <span class="shape shape--6" data-depth="1.1"><i></i></span>
+    <span class="shape shape--7" data-depth="0.4"><i></i></span>
+    <span class="shape shape--8" data-depth="0.7"><i></i></span>
+  </div>
+  <div class="container">
+    <header class="sub-head">
+      <p class="hand-label" data-reveal>Our promise</p>
+      <h2 class="section-title" id="promise-title" data-split data-reveal>바삭의 약속</h2>
+      <p class="section-desc" data-reveal>맛있는 치킨은 지키기 쉬운 약속에서 시작됩니다.</p>
+    </header>
+    <ol class="promise__cards">
+      <li class="promise__item" data-reveal>
+        <article class="promise-card">
+          <span class="promise-card__no" aria-hidden="true">01</span>
+          <div class="promise-card__icon"><div class="promise-card__float"><img src="assets/img/icon-oil.webp" alt="" width="500" height="500" loading="lazy" decoding="async"></div></div>
+          <h3 class="promise-card__title">매일 새 기름</h3>
+          <p class="promise-card__desc">하루를 넘긴 기름은 쓰지 않습니다. 아침마다 새로 채웁니다.</p>
+        </article>
+      </li>
+      <li class="promise__item" data-reveal>
+        <article class="promise-card">
+          <span class="promise-card__no" aria-hidden="true">02</span>
+          <div class="promise-card__icon"><div class="promise-card__float"><img src="assets/img/icon-brine.webp" alt="" width="500" height="500" loading="lazy" decoding="async"></div></div>
+          <h3 class="promise-card__title">24시간 염지</h3>
+          <p class="promise-card__desc">속살까지 촉촉하도록 하루 동안 천천히 재웁니다.</p>
+        </article>
+      </li>
+      <li class="promise__item" data-reveal>
+        <article class="promise-card">
+          <span class="promise-card__no" aria-hidden="true">03</span>
+          <div class="promise-card__icon"><div class="promise-card__float"><img src="assets/img/icon-fry.webp" alt="" width="500" height="500" loading="lazy" decoding="async"></div></div>
+          <h3 class="promise-card__title">주문 즉시 조리</h3>
+          <p class="promise-card__desc">미리 튀겨 두지 않습니다. 주문이 들어오면 그때 튀깁니다.</p>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Franchise -->
+<section class="franchise" id="franchise" aria-labelledby="franchise-title">
+  <div class="franchise__bg">
+    <img src="assets/img/interior.webp" alt="원목 테이블과 머스터드 의자, 라탄 조명이 있는 밝은 바삭치킨 매장" width="1920" height="1086" loading="lazy" decoding="async">
+  </div>
+  <svg class="franchise__wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1440v34c-150 36-300 52-470 30S690 6 510 20 170 80 0 50z"/></svg>
+  <svg class="franchise__wave-bottom" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c160-28 320-34 480-14s320 34 480 18 330-40 480-26v52H0z"/></svg>
+  <div class="franchise__card-wrap">
+    <div class="franchise__card" data-reveal>
+      <span class="franchise__sparkle franchise__sparkle--l" aria-hidden="true"><svg><use href="#i-star"/></svg></span>
+      <span class="franchise__sparkle franchise__sparkle--r" aria-hidden="true"><svg><use href="#i-star"/></svg></span>
+      <div class="ribbon" aria-hidden="true"><span class="ribbon__band">FRANCHISE</span></div>
+      <p class="franchise__lead">바삭치킨은 사장님의 성공을 위해 먼저 무엇이 필요한지 고민합니다.</p>
+      <h2 class="franchise__title" id="franchise-title"><span class="line"><span class="line__inner">바삭치킨과 함께할</span></span> <span class="line"><span class="line__inner">가맹점 사장님을 모십니다</span></span></h2>
+      <div class="franchise__actions">
+        <button class="btn btn--orange" type="button" data-modal-open="franchise-modal">가맹점 문의하기<span class="btn__icon" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></button>
+        <a class="franchise__tel" href="tel:15880000"><span class="franchise__tel-icon" aria-hidden="true"><svg><use href="#i-phone"/></svg></span><span class="franchise__tel-txt"><small>창업 상담</small><b>1588-0000</b></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News + promo -->
+<section class="news" id="news" aria-labelledby="news-title">
+  <div class="container">
+    <div class="ticker" data-ticker data-reveal>
+      <h2 class="ticker__title" id="news-title">BASAK <span>NEWS</span></h2>
+      <div class="ticker__viewport">
+        <ul class="ticker__list">
+          <li class="ticker__item is-current"><time datetime="2026-10-01">2026.10.01</time><span class="ticker__tag">NEW</span><span class="ticker__text">성수점 그랜드 오픈 안내</span></li>
+          <li class="ticker__item"><time datetime="2026-09-20">2026.09.20</time><span class="ticker__text">원산지 및 영양성분 정보 안내</span></li>
+          <li class="ticker__item"><time datetime="2026-09-10">2026.09.10</time><span class="ticker__text">1기 가맹점 모집 안내</span></li>
+        </ul>
+      </div>
+      <div class="ticker__side">
+        <div class="ticker__dots" role="group" aria-label="공지 넘겨 보기">
+          <button class="ticker__dot is-active" type="button" aria-label="첫 번째 공지" aria-current="true"></button>
+          <button class="ticker__dot" type="button" aria-label="두 번째 공지" aria-current="false"></button>
+          <button class="ticker__dot" type="button" aria-label="세 번째 공지" aria-current="false"></button>
+        </div>
+        <button class="ticker__more" type="button" aria-expanded="false" aria-controls="news-all"><span class="ticker__more-label">더보기</span><span class="ticker__plus" aria-hidden="true"></span></button>
+      </div>
+    </div>
+
+    <div class="news-all" id="news-all">
+      <div class="news-all__inner">
+        <ul class="news-all__list">
+          <li><span class="news-all__cat">매장</span><p class="news-all__title">성수점 그랜드 오픈 안내</p><time datetime="2026-10-01">2026.10.01</time></li>
+          <li><span class="news-all__cat">공지</span><p class="news-all__title">원산지 및 영양성분 정보 안내</p><time datetime="2026-09-20">2026.09.20</time></li>
+          <li><span class="news-all__cat">창업</span><p class="news-all__title">1기 가맹점 모집 안내</p><time datetime="2026-09-10">2026.09.10</time></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="promo" id="promo">
+      <div class="promo__head">
+        <p class="hand-label" data-reveal>Hot deals</p>
+        <h3 class="promo__title" data-reveal>지금 진행 중인 이벤트</h3>
+      </div>
+      <div class="promo__list">
+        <article class="coupon coupon--mustard" data-reveal>
+          <div class="coupon__ticket">
+            <div class="coupon__main">
+              <p class="coupon__tag">EVENT 01 · 그랜드 오픈 기념</p>
+              <h4 class="coupon__title">전 메뉴 3,000원 할인</h4>
+              <p class="coupon__date"><svg aria-hidden="true"><use href="#i-clock"/></svg>2026.10.01 ~ 2026.10.31</p>
+            </div>
+            <div class="coupon__stub" aria-hidden="true"><b>3,000</b><span>원 OFF</span></div>
+          </div>
+        </article>
+        <article class="coupon coupon--brown" data-reveal>
+          <div class="coupon__ticket">
+            <div class="coupon__main">
+              <p class="coupon__tag">EVENT 02 · 신메뉴 세트</p>
+              <h4 class="coupon__title">치맥 세트 출시</h4>
+              <p class="coupon__date"><svg aria-hidden="true"><use href="#i-clock"/></svg>2026.10.15 ~ 재고 소진 시</p>
+            </div>
+            <div class="coupon__stub" aria-hidden="true"><b>NEW</b><span>치킨 + 맥주</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section class="sns" id="sns" aria-labelledby="sns-title">
+  <div class="sns__half" aria-hidden="true"></div>
+  <div class="container sns__head">
+    <h2 class="sns__title" id="sns-title" data-split data-reveal>basak sns</h2>
+    <p class="sns__desc" data-reveal>오늘 먹은 바삭, <b>#바삭치킨</b> 태그로 자랑해 주세요</p>
+    <a class="sns__handle" href="https://www.instagram.com/" target="_blank" rel="noopener" data-reveal><svg aria-hidden="true"><use href="#i-insta"/></svg>@basak.chicken<span class="sr-only"> 인스타그램 (새 창)</span></a>
+  </div>
+  <ul class="sns__grid">
+    <li class="sns-item sns-item--1"><a class="sns-item__link" href="https://www.instagram.com/" target="_blank" rel="noopener"><span class="sns-item__media"><img src="assets/img/sns1.webp" alt="크림색 벽 앞에서 닭다리를 들고 있는 손" width="800" height="800" loading="lazy" decoding="async"></span><span class="sns-item__overlay" aria-hidden="true"><svg><use href="#i-insta"/></svg></span><span class="sr-only"> 인스타그램에서 보기 (새 창)</span></a></li>
+    <li class="sns-item sns-item--2"><a class="sns-item__link" href="https://www.instagram.com/" target="_blank" rel="noopener"><span class="sns-item__media"><img src="assets/img/sns2.webp" alt="공원 피크닉 담요 위에 펼친 치킨 박스와 레몬에이드" width="800" height="800" loading="lazy" decoding="async"></span><span class="sns-item__overlay" aria-hidden="true"><svg><use href="#i-insta"/></svg></span><span class="sr-only"> 인스타그램에서 보기 (새 창)</span></a></li>
+    <li class="sns-item sns-item--3"><a class="sns-item__link" href="https://www.instagram.com/" target="_blank" rel="noopener"><span class="sns-item__media"><img src="assets/img/sns4.webp" alt="노란 테이블 위 양념치킨과 레몬에이드" width="800" height="800" loading="lazy" decoding="async"></span><span class="sns-item__overlay" aria-hidden="true"><svg><use href="#i-insta"/></svg></span><span class="sr-only"> 인스타그램에서 보기 (새 창)</span></a></li>
+    <li class="sns-item sns-item--4"><a class="sns-item__link" href="https://www.instagram.com/" target="_blank" rel="noopener"><span class="sns-item__media"><img src="assets/img/sns3.webp" alt="반으로 가르자 치즈가 쭉 늘어나는 치즈볼" width="800" height="800" loading="lazy" decoding="async"></span><span class="sns-item__overlay" aria-hidden="true"><svg><use href="#i-insta"/></svg></span><span class="sr-only"> 인스타그램에서 보기 (새 창)</span></a></li>
+    <li class="sns-item sns-item--5"><a class="sns-item__link" href="https://www.instagram.com/" target="_blank" rel="noopener"><span class="sns-item__media"><img src="assets/img/sns5.webp" alt="자전거 바구니에 담긴 바삭치킨 포장 봉투" width="800" height="800" loading="lazy" decoding="async"></span><span class="sns-item__overlay" aria-hidden="true"><svg><use href="#i-insta"/></svg></span><span class="sr-only"> 인스타그램에서 보기 (새 창)</span></a></li>
+  </ul>
+  <svg class="sns__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 52c170-36 330-44 500-16s330 40 500 20 300-46 440-30v64H0z"/></svg>
+</section>
+
+<!-- Store + order -->
+<section class="store" id="store" aria-labelledby="store-title">
+  <div class="container store__grid">
+    <article class="store-card" data-reveal>
+      <div class="store-card__art">
+        <span class="store-card__pin" aria-hidden="true"><span class="store-card__pin-bob"><svg><use href="#i-pin"/></svg></span><span class="store-card__pin-shadow"></span></span>
+        <img class="store-card__img" src="assets/img/store.webp" alt="갈색 줄무늬 차양과 노란 스쿠터가 있는 아담한 바삭치킨 매장" width="1200" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="store-card__body">
+        <h2 class="store-card__label" id="store-title">가장 가까운 바삭치킨 매장</h2>
+        <div class="store-card__swap" data-store-swap aria-live="polite">
+          <p class="store-card__name" data-store-name>성수점</p>
+          <p class="store-card__addr" data-store-addr>서울 성동구 연무장길 00</p>
+          <p class="store-card__hours"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-store-hours>OPEN 11:00 ~ 23:00</span></p>
+        </div>
+        <ul class="store-card__tags" aria-label="이용 가능한 주문 방법"><li>배달</li><li>포장</li><li>전화주문</li></ul>
+        <div class="store-card__foot">
+          <p class="store-card__count" aria-hidden="true"><b data-store-index>01</b> / 03</p>
+          <button class="store-card__next" type="button" data-store-next>다른 매장 보기<span class="store-card__next-icon" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="order-card" data-reveal aria-labelledby="order-title">
+      <span class="order-card__dots" aria-hidden="true"></span>
+      <p class="wordmark wordmark--static order-card__mark" aria-hidden="true"><span class="wordmark__ko">바삭치킨</span><span class="wordmark__en">BASAK CHICKEN</span></p>
+      <h3 class="order-card__title" id="order-title">바삭치킨,<br>이렇게 주문하세요</h3>
+      <div class="order-card__actions">
+        <button class="order-btn is-active" type="button" data-order="delivery" aria-pressed="true" aria-controls="order-steps"><span class="order-btn__icon" aria-hidden="true"><svg><use href="#i-scooter"/></svg></span><span class="order-btn__txt">배달 주문</span><span class="order-btn__arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></button>
+        <button class="order-btn" type="button" data-order="pickup" aria-pressed="false" aria-controls="order-steps"><span class="order-btn__icon" aria-hidden="true"><svg><use href="#i-bag"/></svg></span><span class="order-btn__txt">포장 주문</span><span class="order-btn__arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></button>
+        <a class="order-btn order-btn--tel" href="tel:15880000"><span class="order-btn__icon" aria-hidden="true"><svg><use href="#i-phone"/></svg></span><span class="order-btn__txt">전화 주문</span><b class="order-btn__num">1588-0000</b></a>
+      </div>
+      <ol class="order-steps" id="order-steps" data-order-steps aria-live="polite">
+        <li><span>01</span>배달앱에서 바삭치킨 검색</li>
+        <li><span>02</span>먹고 싶은 메뉴 담기</li>
+        <li><span>03</span>갓 튀긴 치킨을 문 앞에서</li>
+      </ol>
+    </article>
+  </div>
+  <svg class="store__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46c150 30 310 38 480 14s330-44 500-26 320 44 460 22v34H0z"/></svg>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand" data-reveal>
+        <a class="wordmark wordmark--footer" href="#hero" aria-label="바삭치킨 처음으로"><span class="wordmark__ko">바삭치킨</span><span class="wordmark__en">BASAK CHICKEN</span></a>
+        <p class="footer__tagline">오늘도, 바삭하게.</p>
+        <div class="sns-links">
+          <a class="icon-btn" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="바삭치킨 인스타그램 (새 창)"><svg aria-hidden="true"><use href="#i-insta"/></svg></a>
+          <a class="icon-btn" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="바삭치킨 유튜브 (새 창)"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+      <nav class="footer__sitemap" aria-label="사이트맵">
+        <div class="footer__col" data-reveal>
+          <h3>메뉴</h3>
+          <ul><li><a href="#menu" data-menu-filter="chicken">치킨</a></li><li><a href="#menu" data-menu-filter="side">사이드</a></li><li><a href="#menu" data-menu-filter="drink">음료</a></li></ul>
+        </div>
+        <div class="footer__col" data-reveal>
+          <h3>브랜드</h3>
+          <ul><li><a href="#promise">바삭의 약속</a></li><li><a href="#sns">바삭 SNS</a></li></ul>
+        </div>
+        <div class="footer__col" data-reveal>
+          <h3>매장·창업</h3>
+          <ul><li><a href="#store">매장 찾기</a></li><li><a href="#franchise">가맹 안내</a></li><li><button class="footer__link-btn" type="button" data-modal-open="franchise-modal">창업 상담 신청</button></li></ul>
+        </div>
+        <div class="footer__col" data-reveal>
+          <h3>고객지원</h3>
+          <ul><li><a href="#news">공지사항</a></li><li><a href="#promo">이벤트</a></li><li><a href="#cs">고객 상담</a></li></ul>
+        </div>
+      </nav>
+      <div class="footer__cs" id="cs" data-reveal>
+        <p class="footer__cs-label">고객 상담</p>
+        <a class="footer__cs-tel" href="tel:15880000">1588-0000</a>
+        <p class="footer__cs-hours">평일 09:00 ~ 18:00<br>(점심시간 12:00 ~ 13:00)</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <ul class="footer__policy" aria-label="약관 및 정책">
+        <li>이용약관</li>
+        <li><strong>개인정보처리방침</strong></li>
+        <li>이메일무단수집거부</li>
+        <li>가맹사업 정보공개서</li>
+      </ul>
+      <address class="footer__info"><span>(주)바삭에프앤비</span><span>대표 홍길동</span><span>사업자등록번호 000-00-00000</span><span>서울특별시 성동구 연무장길 00</span><span>대표전화 1588-0000</span></address>
+      <p class="footer__copy">COPYRIGHT © BASAK CHICKEN. ALL RIGHTS RESERVED.</p>
+    </div>
+  </div>
+  <p class="footer__giant" aria-hidden="true"><span>B</span><span>A</span><span>S</span><span>A</span><span>K</span></p>
+</footer>
+
+<!-- Floating mascot -->
+<div class="mascot-dock" data-mascot-dock>
+  <button class="mascot" type="button" aria-label="가까운 매장에서 바로 주문하기">
+    <span class="mascot__bubble" aria-hidden="true">여기서<br><b>바로 주문</b>하세요!</span>
+    <span class="mascot__char"><img class="mascot__img" src="assets/img/mascot.webp" alt="" width="600" height="600" decoding="async"></span>
+    <span class="mascot__shadow" aria-hidden="true"></span>
+  </button>
+</div>
+
+<!-- Franchise modal -->
+<div class="modal" id="franchise-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel" data-lenis-prevent>
+    <button class="modal__close" type="button" data-modal-close aria-label="상담 신청 창 닫기"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="modal__view" data-modal-form-view>
+      <p class="modal__tag">FRANCHISE</p>
+      <h2 class="modal__title" id="modal-title">가맹 상담 신청</h2>
+      <p class="modal__desc">남겨 주시면 창업 담당자가 직접 연락드릴게요.</p>
+      <form class="form" data-franchise-form novalidate>
+        <div class="field">
+          <label for="f-name">성명 <em aria-hidden="true">*</em></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="f-name-err">
+          <p class="field__err" id="f-name-err"></p>
+        </div>
+        <div class="field">
+          <label for="f-tel">연락처 <em aria-hidden="true">*</em></label>
+          <input id="f-tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" required aria-required="true" aria-describedby="f-tel-err">
+          <p class="field__err" id="f-tel-err"></p>
+        </div>
+        <div class="field field--full">
+          <label for="f-region">희망지역 <em aria-hidden="true">*</em></label>
+          <div class="select">
+            <select id="f-region" name="region" required aria-required="true" aria-describedby="f-region-err">
+              <option value="">지역을 선택해 주세요</option>
+              <option>서울</option>
+              <option>경기</option>
+              <option>인천</option>
+              <option>강원</option>
+              <option>대전·충청</option>
+              <option>광주·전라</option>
+              <option>대구·경북</option>
+              <option>부산·울산·경남</option>
+              <option>제주</option>
+            </select>
+          </div>
+          <p class="field__err" id="f-region-err"></p>
+        </div>
+        <div class="field field--full">
+          <label for="f-msg">문의 내용 <span class="field__opt">(선택)</span></label>
+          <textarea id="f-msg" name="message" rows="4" maxlength="500" placeholder="궁금한 점을 편하게 적어 주세요."></textarea>
+        </div>
+        <div class="field field--full field--check">
+          <label class="check" for="f-agree">
+            <input id="f-agree" name="agree" type="checkbox" required aria-required="true" aria-describedby="f-agree-note f-agree-err">
+            <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <span class="check__text">개인정보 수집 및 이용에 동의합니다. <em>(필수)</em></span>
+          </label>
+          <p class="check__note" id="f-agree-note">수집 항목: 성명, 연락처, 희망지역 · 이용 목적: 가맹 상담 안내</p>
+          <p class="field__err" id="f-agree-err"></p>
+        </div>
+        <button class="btn btn--orange btn--block form__submit" type="submit"><span class="form__submit-label">상담 신청하기</span><span class="btn__icon" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></button>
+      </form>
+    </div>
+    <div class="modal__done" data-modal-done hidden>
+      <span class="modal__done-icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+      <p class="modal__done-title" tabindex="-1">문의가 접수되었습니다.<br>곧 연락드리겠습니다.</p>
+      <p class="modal__done-sub">영업일 기준 1~2일 안에 창업 담당자가 전화드릴게요.</p>
+      <button class="btn btn--brown" type="button" data-modal-close>확인<span class="btn__icon" aria-hidden="true"><svg><use href="#i-check"/></svg></span></button>
+    </div>
+  </div>
+</div>
+
+<script src="../vendor/gsap.min.js"></script>
+<script src="../vendor/ScrollTrigger.min.js"></script>
+<script src="../vendor/lenis.min.js"></script>
+<script src="../vendor/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
