@@ -956,6 +956,11 @@ html:not(.js) .sns__3d, .sns.is-fallback .sns__3d { display: none; }
   right: max(var(--gutter), 128px);
   z-index: 4;
   text-align: right;
+  padding: 16px 22px 18px;
+  background: var(--blue);
+  border: 2px solid var(--navy);
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 var(--navy);
 }
 .sns__label {
   display: inline-flex;
@@ -1448,6 +1453,7 @@ html.js.anim .stmt__note { opacity: 0; }
   .quick__btn { width: 50px; height: 50px; gap: 0; box-shadow: 2px 2px 0 var(--navy); }
   .quick__btn svg { width: 20px; height: 20px; }
   .quick__btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .quick__btn:not(.quick__btn--top) { display: none; }
 
   .hero { --prod-w: 64vw; --prod-r: 17vw; --prod-b: 9svh; min-height: 680px; }
   .hero__bg { top: var(--hd); bottom: auto; height: 50%; }
