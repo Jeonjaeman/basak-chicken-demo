@@ -9,6 +9,10 @@
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
   const media = (q) => (window.matchMedia ? window.matchMedia(q).matches : false);
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  /* Entrance tweens on elements that also have a CSS transform transition: mute the transition while GSAP drives it. */
+  function trOff() { this.targets().forEach((el) => { el.style.transition = 'none'; }); }
+  function trOn() { this.targets().forEach((el) => { el.style.transition = ''; }); }
+  const quiet = { onStart: trOff, onComplete: trOn };
 
   const reduce = media('(prefers-reduced-motion: reduce)');
   const fine = media('(hover: hover) and (pointer: fine)');
@@ -98,7 +102,7 @@
     else root.style.overflow = 'hidden';
     if (hasGsap && !reduce) {
       gsap.fromTo(mnav, { clipPath: 'circle(0% at 92% 0%)' }, { clipPath: 'circle(150% at 92% 0%)', duration: 0.9, ease: 'expo.out' });
-      gsap.fromTo($$('.mnav__list a', mnav), { yPercent: 120, rotation: 6, autoAlpha: 0 }, { yPercent: 0, rotation: 0, autoAlpha: 1, duration: 0.75, stagger: 0.06, ease: 'back.out(1.8)', delay: 0.1, clearProps: 'transform' });
+      gsap.fromTo($$('.mnav__list a', mnav), { yPercent: 120, rotation: 6, autoAlpha: 0 }, { yPercent: 0, rotation: 0, autoAlpha: 1, duration: 0.75, stagger: 0.06, ease: 'back.out(1.8)', delay: 0.1, clearProps: 'transform', ...quiet });
       gsap.fromTo($('.mnav__foot', mnav), { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, delay: 0.4 });
     }
     const first = $('.mnav__list a', mnav);
@@ -416,6 +420,9 @@
       src: $('img', b).getAttribute('src')
     });
     const fmt = (n) => n.toLocaleString('ko-KR');
+    const liveEl = $('#menu-live', sec) || $('#menu-live');
+    /* One announcement per change; the visible price counts up and would flood a live region. */
+    const announce = (d) => { if (liveEl) liveEl.textContent = d.name + ', ' + fmt(d.price) + '원'; };
     let idx = Math.max(0, items().findIndex((b) => b.classList.contains('is-active')));
     let price = items()[idx] ? read(items()[idx]).price : 0;
 
@@ -443,8 +450,10 @@
         descEl.textContent = d.desc;
         priceNum.textContent = fmt(d.price);
         price = d.price;
+        announce(d);
         return;
       }
+      announce(d);
       swapName(d.name, dir);
       gsap.timeline()
         .to([enEl, descEl], { autoAlpha: 0, y: -10, duration: 0.22, ease: 'power2.in', overwrite: 'auto' })
@@ -479,7 +488,7 @@
       next = (next + all.length) % all.length;
       if (next === idx && !force) return;
       if (busy) {
-        queued = { next, dir };
+        if (!queued || !queued.tab) queued = { next, dir };
         return;
       }
       busy = true;
@@ -513,7 +522,7 @@
         .to(oldImg, { xPercent: -125 * dir, rotation: -230 * dir, autoAlpha: 0, duration: 0.7, ease: 'power3.in', overwrite: 'auto' }, 0)
         .to(shadow, { scaleX: 0.35, duration: 0.5, ease: 'power2.in', overwrite: 'auto' }, 0)
         .fromTo(img, { xPercent: 130 * dir, rotation: 250 * dir, autoAlpha: 0 }, { xPercent: 0, rotation: 0, autoAlpha: 1, duration: 1.05, ease: 'back.out(1.5)' }, 0.22)
-        .to(shadow, { scaleX: 1, duration: 0.8, ease: 'back.out(2.5)' }, 0.72)
+        .to(shadow, { scaleX: 1, duration: 0.8, ease: 'back.out(2.5)', overwrite: 'auto' }, 0.72)
         .call(unlock, null, 0.62);
     }
 
@@ -628,7 +637,7 @@
       .from(imgs.firstElementChild, { yPercent: -80, rotation: -40, autoAlpha: 0, duration: 1.3, ease: 'bounce.out' }, 0)
       .from(shadow, { scaleX: 0, autoAlpha: 0, duration: 0.8, ease: 'back.out(2)' }, 0.55)
       .fromTo('.menu__wave', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.2, ease: 'power3.inOut' }, 0)
-      .from('.menu__arrow', { scale: 0, rotation: -90, duration: 0.7, stagger: 0.1, ease: 'back.out(2.4)', clearProps: 'transform' }, 0.6)
+      .from('.menu__arrow', { scale: 0, rotation: -90, duration: 0.7, stagger: 0.1, ease: 'back.out(2.4)', clearProps: 'transform', ...quiet }, 0.6)
       .call(() => { if (badge) badge.classList.toggle('is-off', !read(items()[Math.max(0, idx)]).isNew); }, null, 0.9)
       .from('.menu__info > *', { y: 30, autoAlpha: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out' }, 0.4)
       .from($$('.thumb', lists.chicken), { y: 50, scale: 0.5, autoAlpha: 0, duration: 0.7, stagger: 0.06, ease: 'back.out(2)', clearProps: 'transform,opacity,visibility' }, 0.5);
@@ -834,9 +843,8 @@
 
       const tilt = new THREE.Group();
       const outer = new THREE.Group();
+      /* The model already sits diagonally with its best side toward +Z, so it needs no extra standing rotation. */
       const inner = new THREE.Group();
-      inner.rotation.x = Math.PI / 2;
-      inner.rotation.z = 0.8;
       outer.add(inner);
       tilt.add(outer);
       scene.add(tilt);
@@ -1004,7 +1012,8 @@
             m.metalness = 0;
             m.metalnessMap = null;
             m.roughness = 0.82;
-            if (m.normalScale) m.normalScale.set(0.9, 0.9);
+            m.emissiveIntensity = 0.3;
+            if (m.normalScale) m.normalScale.set(1, 1);
             m.needsUpdate = true;
           });
         });
@@ -1015,7 +1024,7 @@
         model.position.sub(center);
         const fit = new THREE.Group();
         fit.add(model);
-        fit.scale.setScalar(1.56 / maxDim);
+        fit.scale.setScalar(1.42 / maxDim);
         inner.add(fit);
 
         ready = true;
@@ -1036,11 +1045,11 @@
       .from('.store__disc', { scale: 0, duration: 1, ease: 'back.out(1.6)' }, 0.1)
       .fromTo('.store__iso', { yPercent: 70, scale: 0.6, rotation: -10, autoAlpha: 0 }, { yPercent: 0, scale: 1, rotation: 0, autoAlpha: 1, duration: 1.4, ease: 'back.out(1.6)' }, 0.3)
       .from('.store__sub', { y: 30, autoAlpha: 0, duration: 0.8, ease: 'power3.out' }, 0.35)
-      .from('.store__copy .pill', { y: 30, scale: 0.8, autoAlpha: 0, duration: 0.8, ease: 'back.out(2)', clearProps: 'transform' }, 0.5)
+      .from('.store__copy .pill', { y: 30, scale: 0.8, autoAlpha: 0, duration: 0.8, ease: 'back.out(2)', clearProps: 'transform', ...quiet }, 0.5)
       .from('.pin__in', { y: -140, scale: 0, autoAlpha: 0, duration: 1.1, stagger: 0.16, ease: 'bounce.out' }, 0.95);
     gsap.from('.scard', {
       y: 90, rotationX: -65, autoAlpha: 0, transformOrigin: '50% 100%', transformPerspective: 900,
-      duration: 1.1, stagger: 0.12, ease: 'back.out(1.5)', clearProps: 'transform,opacity,visibility',
+      duration: 1.1, stagger: 0.12, ease: 'back.out(1.5)', clearProps: 'transform,opacity,visibility', ...quiet,
       scrollTrigger: { trigger: '.store__list', start: 'top 88%', once: true }
     });
   }
@@ -1052,11 +1061,11 @@
     gsap.fromTo('.event__curve', { yPercent: 8 }, { yPercent: -8, ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
     gsap.timeline({ scrollTrigger: { trigger: sec, start: 'top 70%', once: true } })
       .from('.event__sub', { y: 24, autoAlpha: 0, duration: 0.7, ease: 'power3.out' }, 0.35)
-      .from('.event__head .pill', { x: 60, autoAlpha: 0, duration: 0.9, ease: 'expo.out', clearProps: 'transform' }, 0.45);
+      .from('.event__head .pill', { x: 60, autoAlpha: 0, duration: 0.9, ease: 'expo.out', clearProps: 'transform', ...quiet }, 0.45);
     const grid = { trigger: '.event__grid', start: 'top 85%', once: true };
     gsap.from($$('.ecard', sec), {
       x: (i) => (i ? 160 : -160), y: (i) => (i ? 140 : 90), rotation: (i) => (i ? 10 : -10), autoAlpha: 0,
-      duration: 1.25, stagger: 0.14, ease: 'back.out(1.3)', clearProps: 'transform,opacity,visibility',
+      duration: 1.25, stagger: 0.14, ease: 'back.out(1.3)', clearProps: 'transform,opacity,visibility', ...quiet,
       scrollTrigger: grid
     });
     gsap.from($$('.ecard__over > *', sec), { x: -40, autoAlpha: 0, duration: 0.8, stagger: 0.08, delay: 0.55, ease: 'power3.out', scrollTrigger: grid });
@@ -1067,7 +1076,7 @@
     const sec = $('#contact');
     if (!sec || !motion) return;
     gsap.timeline({ scrollTrigger: { trigger: sec, start: 'top 80%', once: true } })
-      .from($$('.tile', sec), { y: 80, scale: 0.86, rotation: (i) => (i ? 5 : -5), autoAlpha: 0, duration: 1.1, stagger: 0.12, ease: 'back.out(1.8)', clearProps: 'transform,opacity,visibility' }, 0)
+      .from($$('.tile', sec), { y: 80, scale: 0.86, rotation: (i) => (i ? 5 : -5), autoAlpha: 0, duration: 1.1, stagger: 0.12, ease: 'back.out(1.8)', clearProps: 'transform,opacity,visibility', ...quiet }, 0)
       .from($$('.tile__big', sec), { yPercent: 40, autoAlpha: 0, duration: 0.8, stagger: 0.12, ease: 'expo.out' }, 0.3)
       .from($$('.tile__arrow', sec), { scale: 0, rotation: -180, duration: 0.8, stagger: 0.12, ease: 'back.out(2.4)', clearProps: 'transform' }, 0.45);
   }
@@ -1139,7 +1148,7 @@
     if (!motion) return;
     const ft = { trigger: '.ft', start: 'top 88%', once: true };
     gsap.from('.ft__top > *', { y: 50, autoAlpha: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out', scrollTrigger: ft });
-    gsap.from('.ft__doodle', { rotation: -90, scale: 0, duration: 1, delay: 0.2, ease: 'back.out(2)', clearProps: 'transform', scrollTrigger: ft });
+    gsap.from('.ft__doodle', { rotation: -90, scale: 0, duration: 1, delay: 0.2, ease: 'back.out(2)', clearProps: 'transform', ...quiet, scrollTrigger: ft });
   }
 
   /* Boot */
