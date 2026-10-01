@@ -95,14 +95,18 @@
     burger.setAttribute('aria-label', '전체 메뉴 닫기');
     root.classList.add('mnav-open');
     if (lenis) lenis.stop();
-    else document.body.style.overflow = 'hidden';
+    else root.style.overflow = 'hidden';
     if (hasGsap && !reduce) {
       gsap.fromTo(mnav, { clipPath: 'circle(0% at 92% 0%)' }, { clipPath: 'circle(150% at 92% 0%)', duration: 0.9, ease: 'expo.out' });
-      gsap.fromTo($$('.mnav__list a', mnav), { yPercent: 120, rotation: 6, autoAlpha: 0 }, { yPercent: 0, rotation: 0, autoAlpha: 1, duration: 0.75, stagger: 0.06, ease: 'back.out(1.8)', delay: 0.1 });
+      gsap.fromTo($$('.mnav__list a', mnav), { yPercent: 120, rotation: 6, autoAlpha: 0 }, { yPercent: 0, rotation: 0, autoAlpha: 1, duration: 0.75, stagger: 0.06, ease: 'back.out(1.8)', delay: 0.1, clearProps: 'transform' });
       gsap.fromTo($('.mnav__foot', mnav), { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, delay: 0.4 });
     }
     const first = $('.mnav__list a', mnav);
-    if (first) first.focus({ preventScroll: true });
+    if (first) {
+      /* The links start hidden while they animate in, so focus once the first one is visible. */
+      if (hasGsap && !reduce) setTimeout(() => { if (navOpen) first.focus({ preventScroll: true }); }, 280);
+      else first.focus({ preventScroll: true });
+    }
   }
 
   function closeNav(returnFocus) {
@@ -112,7 +116,7 @@
     burger.setAttribute('aria-label', '전체 메뉴 열기');
     root.classList.remove('mnav-open');
     if (lenis) lenis.start();
-    else document.body.style.overflow = '';
+    else root.style.overflow = '';
     const done = () => { mnav.hidden = true; };
     if (hasGsap && !reduce) {
       gsap.killTweensOf(mnav);
@@ -371,7 +375,7 @@
         const v = en.target;
         if (en.isIntersecting && v.hasAttribute('autoplay')) {
           const p = v.play();
-          if (p && typeof p.catch === 'function') p.catch(() => v.removeAttribute('autoplay'));
+          if (p && typeof p.catch === 'function') p.catch((err) => { if (err && err.name === 'NotAllowedError') v.removeAttribute('autoplay'); });
         } else if (!en.isIntersecting) {
           v.pause();
         }
@@ -587,6 +591,9 @@
       sid = e.pointerId;
       sx = e.clientX;
       sy = e.clientY;
+      if (e.pointerType === 'mouse' && stage.setPointerCapture) {
+        try { stage.setPointerCapture(e.pointerId); } catch (err) { sid = e.pointerId; }
+      }
     });
     stage.addEventListener('pointerup', (e) => {
       if (sid !== e.pointerId) return;
@@ -691,8 +698,8 @@
       const S = css('--s') || 1;
       const c = cluster[i % cluster.length];
       tl.fromTo(el,
-        { x: () => c[0] * vw(), y: () => c[1] * vh(), rotation: c[2], scale: 0.32 },
-        { x: () => X * vw() * k(), y: () => Y * vh(), rotation: R, scale: S, duration: 1, ease: 'power3.out' },
+        { x: () => c[0] * vw(), y: () => c[1] * vh(), xPercent: 0, yPercent: 0, rotation: c[2], scale: 0.32 },
+        { x: () => X * vw() * k(), y: () => Y * vh(), xPercent: 0, yPercent: 0, rotation: R, scale: S, duration: 1, ease: 'power3.out' },
         i * 0.05);
     });
 
@@ -740,7 +747,11 @@
   function webglAvailable() {
     try {
       const c = document.createElement('canvas');
-      return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl')));
+      const gl = window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'));
+      if (!gl) return false;
+      const lose = gl.getExtension('WEBGL_lose_context');
+      if (lose) lose.loseContext();
+      return true;
     } catch (err) {
       return false;
     }
@@ -974,7 +985,7 @@
       canvas.addEventListener('keydown', (e) => {
         if (!ready || (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')) return;
         e.preventDefault();
-        vel += e.key === 'ArrowRight' ? 5 : -5;
+        vel = clamp(vel + (e.key === 'ArrowRight' ? 5 : -5), -14, 14);
         wrap.classList.add('is-touched');
       });
 

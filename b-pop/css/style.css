@@ -310,7 +310,7 @@ html.mnav-open .quick { visibility: hidden; }
 
 /* Hero */
 .hero {
-  --prod-w: clamp(240px, 33vw, 540px);
+  --prod-w: min(clamp(240px, 33vw, 540px), 52svh);
   --prod-r: max(8vw, 128px);
   --prod-b: 11vh;
   position: relative;
@@ -910,6 +910,8 @@ html:not(.js) .sns__3d, .sns.is-fallback .sns__3d { display: none; }
   outline: none;
 }
 .sns__3d.is-grabbing .sns__canvas { cursor: grabbing; }
+.sns__canvas:focus-visible { outline: 3px solid var(--yellow); outline-offset: -10px; border-radius: 50%; }
+.sns__3d { -webkit-user-select: none; user-select: none; }
 .sns__loader {
   position: absolute;
   top: 50%;
@@ -1121,7 +1123,7 @@ html:not(.js) .sns__3d, .sns.is-fallback .sns__3d { display: none; }
   overflow: hidden;
   isolation: isolate;
 }
-.event__curve { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
+.event__curve { position: absolute; left: 0; top: -10%; z-index: -1; width: 100%; height: 120%; }
 .event__curve path { fill: #E2E9F8; }
 .event__curve .event__curve-2 { fill: #E9EEFA; }
 .event__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; }
@@ -1540,4 +1542,19 @@ html.js.anim .stmt__note { opacity: 0; }
   .sns { height: auto; }
   .sns__sticky { position: relative; height: auto; min-height: 100svh; }
   .mq__track { transform: translateX(-12%); }
+}
+
+/* Portrait tablets: the cover-cropped photo is all model, so stack the hero like on phones. */
+@media (min-width: 768px) and (max-width: 1100px) and (orientation: portrait) {
+  .hero { --prod-w: 46vw; --prod-r: 10vw; --prod-b: 8svh; }
+  .hero__bg { top: var(--hd); bottom: auto; height: 52%; }
+  .hero__slab { width: 100%; height: 54%; clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%); }
+  .hero__copy { top: auto; bottom: calc(var(--prod-b) + var(--prod-w) * .8); left: 6vw; right: 6vw; }
+  .hero__kicker { color: var(--white); }
+  .hero__love { color: var(--yellow); }
+  .hero__title { font-size: clamp(64px, 11vw, 112px); color: var(--white); }
+  .doodle--under path { stroke: var(--yellow); }
+  .hero__tag { left: 6vw; right: auto; bottom: 3.5svh; }
+  .hero__sticker { right: auto; left: 5vw; bottom: calc(var(--prod-b) + var(--prod-w) * .18); }
+  .hero__scroll { display: none; }
 }
