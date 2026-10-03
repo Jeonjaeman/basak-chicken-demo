@@ -340,7 +340,6 @@
   <!-- Franchise -->
   <section class="franchise" id="franchise" aria-labelledby="fr-title">
     <div class="franchise__box box-reveal" data-reveal>
-      <div class="franchise__rays" aria-hidden="true"></div>
       <div class="franchise__copy">
         <p class="franchise__label">Franchise</p>
         <h2 class="franchise__title reveal-lines" id="fr-title"><span class="line"><span>바삭 1기</span></span><span class="line"><span>가맹점을 찾습니다</span></span></h2>
@@ -351,44 +350,46 @@
         </ol>
         <p class="franchise__contact"><a href="tel:15880000">1588-0000</a><i aria-hidden="true">·</i><a href="mailto:franchise@basak.co.kr">franchise@basak.co.kr</a></p>
       </div>
-      <div class="apply">
-        <form class="apply__form" novalidate aria-labelledby="apply-title">
-          <h3 class="apply__title" id="apply-title">창업 상담 신청</h3>
-          <div class="field">
-            <label for="f-name">이름</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="이름을 입력해 주세요" aria-describedby="e-name" required>
-            <p class="field__err" id="e-name"></p>
-          </div>
-          <div class="field">
-            <label for="f-tel">연락처</label>
-            <input id="f-tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13" aria-describedby="e-tel" required>
-            <p class="field__err" id="e-tel"></p>
-          </div>
-          <div class="field">
-            <label for="f-region">희망 지역</label>
-            <div class="select">
-              <select id="f-region" name="region" aria-describedby="e-region" required>
-                <option value="">지역을 골라 주세요</option>
-                <option>서울</option><option>경기</option><option>인천</option><option>부산</option>
-                <option>대구</option><option>광주</option><option>대전</option><option>기타</option>
-              </select>
+      <div class="franchise__side">
+        <div class="apply">
+          <form class="apply__form" novalidate aria-labelledby="apply-title">
+            <h3 class="apply__title" id="apply-title">창업 상담 신청</h3>
+            <div class="field">
+              <label for="f-name">이름</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="이름을 입력해 주세요" aria-describedby="e-name" required>
+              <p class="field__err" id="e-name"></p>
             </div>
-            <p class="field__err" id="e-region"></p>
+            <div class="field">
+              <label for="f-tel">연락처</label>
+              <input id="f-tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13" aria-describedby="e-tel" required>
+              <p class="field__err" id="e-tel"></p>
+            </div>
+            <div class="field">
+              <label for="f-region">희망 지역</label>
+              <div class="select">
+                <select id="f-region" name="region" aria-describedby="e-region" required>
+                  <option value="">지역을 골라 주세요</option>
+                  <option>서울</option><option>경기</option><option>인천</option><option>부산</option>
+                  <option>대구</option><option>광주</option><option>대전</option><option>기타</option>
+                </select>
+              </div>
+              <p class="field__err" id="e-region"></p>
+            </div>
+            <div class="field field--check">
+              <label class="check" for="f-agree">
+                <input id="f-agree" name="agree" type="checkbox" aria-describedby="e-agree" required>
+                <span class="check__box" aria-hidden="true"></span>
+                <span class="check__txt">개인정보 수집 및 이용에 동의합니다. <small>이름, 연락처는 상담 후 1년간 보관합니다.</small></span>
+              </label>
+              <p class="field__err" id="e-agree"></p>
+            </div>
+            <button class="pill pill--black pill--block" type="submit"><span class="pill__txt">상담 신청</span><svg class="pill__ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </form>
+          <div class="apply__done" tabindex="-1" hidden>
+            <span class="apply__check" aria-hidden="true"></span>
+            <p class="apply__done-title">접수 완료</p>
+            <p class="apply__done-text">접수되었습니다. 영업일 기준 2일 안에 연락드리겠습니다.</p>
           </div>
-          <div class="field field--check">
-            <label class="check" for="f-agree">
-              <input id="f-agree" name="agree" type="checkbox" aria-describedby="e-agree" required>
-              <span class="check__box" aria-hidden="true"></span>
-              <span class="check__txt">개인정보 수집 및 이용에 동의합니다. <small>이름, 연락처는 상담 후 1년간 보관합니다.</small></span>
-            </label>
-            <p class="field__err" id="e-agree"></p>
-          </div>
-          <button class="pill pill--black pill--block" type="submit"><span class="pill__txt">상담 신청</span><svg class="pill__ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        </form>
-        <div class="apply__done" tabindex="-1" hidden>
-          <span class="apply__check" aria-hidden="true"></span>
-          <p class="apply__done-title">접수 완료</p>
-          <p class="apply__done-text">접수되었습니다. 영업일 기준 2일 안에 연락드리겠습니다.</p>
         </div>
       </div>
     </div>

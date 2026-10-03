@@ -1067,15 +1067,8 @@
     sync();
   }
 
-  /* Franchise: rays only spin while visible, consult form */
+  /* Franchise: consult form */
   function initFranchise() {
-    var box = $('.franchise__box');
-    if (box && hasIO && !reduced) {
-      new IntersectionObserver(function (entries) {
-        box.classList.toggle('is-live', entries[0].isIntersecting);
-      }).observe(box);
-    }
-
     var form = $('.apply__form');
     var done = $('.apply__done');
     if (!form || !done) { return; }
